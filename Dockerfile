@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y software-properties-common \
 
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130 --break-system-packages
 
+RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/requirements.txt
+
+RUN pip install -r requirements.txt --break-system-packages
+
 # 3. 複製啟動腳本進去
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh 
