@@ -18,7 +18,7 @@ RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/mas
 
 RUN pip install -r requirements.txt --break-system-packages
 
-RUN ls /etc/bin | grep python
+RUN python3 --version
 
 # 3. 複製啟動腳本進去
 COPY entrypoint.sh /entrypoint.sh
