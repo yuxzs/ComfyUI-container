@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y software-properties-common \
     wget \
     git
 
-RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130 --break-system-packages
 
 # 3. 複製啟動腳本進去
 COPY entrypoint.sh /entrypoint.sh
