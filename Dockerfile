@@ -1,10 +1,16 @@
 # FROM python:3.11-slim
-FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:13.0.2-cudnn-runtime-ubuntu24.04
 
 
-RUN apt-get update && apt-get install -y \
-    python3.13 python3.13-venv pip \
-    wget git 
+RUN apt-get update && apt-get install -y software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update \
+    && apt-get install -y \
+    python3.13 \
+    python3.13-venv \
+    python3-pip \
+    wget \
+    git
 
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
 
