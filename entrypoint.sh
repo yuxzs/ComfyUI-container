@@ -20,9 +20,9 @@ cd "$INSTALL_DIR"
 # 確保 venv 存在並啟動 (webui.sh 會自動處理，但我們可以在這裡微調)
 echo "Launching ComfyUI..."
 
-pip install -r requirements.txt
+pip install -r requirements.txt --break-system-packages
 
-# pip install -r manager_requirements.txt
+# pip install -r manager_requirements.txt --break-system-packages
 
 exec python ./main.py
 
