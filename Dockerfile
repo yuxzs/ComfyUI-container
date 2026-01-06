@@ -16,7 +16,11 @@ RUN pip install torch torchvision torchaudio --extra-index-url https://download.
 
 RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/requirements.txt
 
+RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/manager_requirements.txt
+
 RUN pip install -r requirements.txt --break-system-packages
+
+RUN pip install -r manager_requirements.txt --break-system-packages
 
 RUN python3 --version
 
