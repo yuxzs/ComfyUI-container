@@ -2,7 +2,7 @@
 FROM nvidia/cuda:13.0.2-cudnn-runtime-ubuntu24.04
 
 ENV PYTHONUNBUFFERED=1 \
-    VIRTUAL_ENV=/opt/venv \
+    VIRTUAL_ENV=/home/sduser/ComfyUI/venv \
     DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
