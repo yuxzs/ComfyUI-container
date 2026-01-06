@@ -2,13 +2,9 @@
 FROM nvidia/cuda:13.0.2-cudnn-runtime-ubuntu24.04
 
 
-RUN apt-get update && apt-get install -y software-properties-common \
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install -y \
-    python3.13 \
-    python3.13-venv \
-    python3-pip \
+    python3-full \
     wget \
     git
 
