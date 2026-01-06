@@ -24,6 +24,6 @@ pip install -r requirements.txt --break-system-packages
 
 # pip install -r manager_requirements.txt --break-system-packages
 
-exec python3 ./main.py --listen
+exec python3 ./main.py --listen --enable-manager
 
 # python main.py --enable-manager
