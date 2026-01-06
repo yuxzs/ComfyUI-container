@@ -24,6 +24,8 @@ RUN pip install -r manager_requirements.txt --break-system-packages
 
 RUN python3 --version
 
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
+
 # 3. 複製啟動腳本進去
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh 
