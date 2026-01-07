@@ -10,7 +10,8 @@ RUN apt-get update \
     python3-full \
     pip \
     wget \
-    git
+    git \
+    ffmpeg libsm6 libxext6
 
 # RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
 # RUN python3 -m venv $VIRTUAL_ENV
