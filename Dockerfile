@@ -12,6 +12,7 @@ RUN apt-get update \
     wget \
     git
 
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
@@ -22,7 +23,7 @@ RUN pip install torch torchvision torchaudio --extra-index-url https://download.
 
 # RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/manager_requirements.txt
 
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
+
 RUN pip install -r /home/sduser/ComfyUI/requirements.txt 
 RUN pip install -r /home/sduser/ComfyUI/manager_requirements.txt
 
