@@ -12,20 +12,20 @@ RUN apt-get update \
     wget \
     git
 
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+# RUN git clone https://github.com/comfyanonymous/ComfyUI.git "/home/sduser/ComfyUI"
+# RUN python3 -m venv $VIRTUAL_ENV
+# ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN python3 --version
-RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
+# RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
 
 # RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/requirements.txt
 
 # RUN wget https://raw.githubusercontent.com/comfyanonymous/ComfyUI/refs/heads/master/manager_requirements.txt
 
 
-RUN pip install -r /home/sduser/ComfyUI/requirements.txt 
-RUN pip install -r /home/sduser/ComfyUI/manager_requirements.txt
+# RUN pip install -r /home/sduser/ComfyUI/requirements.txt 
+# RUN pip install -r /home/sduser/ComfyUI/manager_requirements.txt
 
 # 3. 複製啟動腳本進去
 COPY entrypoint.sh /entrypoint.sh

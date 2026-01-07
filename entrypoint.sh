@@ -15,14 +15,19 @@ else
     # cd "$INSTALL_DIR" && git pull
 fi
 
+python3 -m venv $VIRTUAL_ENV
+source "$VIRTUAL_ENV/bin/activate"
+
 cd "$INSTALL_DIR"
 
 # 確保 venv 存在並啟動 (webui.sh 會自動處理，但我們可以在這裡微調)
 echo "Launching ComfyUI..."
 
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
+
 # pip install -r requirements.txt --break-system-packages
 pip install -r requirements.txt 
-
+pip install -r manager_requirements.txt
 # pip install -r manager_requirements.txt --break-system-packages
 
 exec python3 ./main.py --listen --enable-manager
